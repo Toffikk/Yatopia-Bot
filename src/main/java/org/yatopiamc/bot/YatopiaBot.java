@@ -82,7 +82,7 @@ public class YatopiaBot {
             .setGatewayPool(executor)
             .setCallbackPool(executor)
             .setRateLimitPool(executor)
-            .setActivity(Activity.playing("Yatopia.jar"))
+            .setActivity(Activity.playing("Sugarcane.jar"))
             .disableCache(CacheFlag.VOICE_STATE, CacheFlag.ACTIVITY, CacheFlag.CLIENT_STATUS)
             .addEventListeners(timingsMessageListener)
             .addEventListeners(pasteMessageListener)
@@ -96,7 +96,7 @@ public class YatopiaBot {
             new EmbedBuilder()
                 .setColor(0xffff00)
                 .setTimestamp(Instant.now())
-                .setFooter("https://yatopiamc.org/", jda.getSelfUser().getEffectiveAvatarUrl()));
+                .setFooter("https://sugarcanemc.org/", jda.getSelfUser().getEffectiveAvatarUrl()));
 
     CommandSettings settings = CommandSettings.defaultSettings();
     settings.setEnablePrefixCommand(false);
@@ -153,7 +153,7 @@ public class YatopiaBot {
           public void run() {
             if (i == 0) {
               i = 1;
-              jda.getPresence().setActivity(Activity.playing("Yatopia.jar"));
+              jda.getPresence().setActivity(Activity.playing("Sugarcane.jar"));
             } else {
               jda.getPresence().setActivity(Activity.watching("over you ♥"));
               i = 0;

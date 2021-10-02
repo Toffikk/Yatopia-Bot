@@ -140,7 +140,7 @@ public class TimingsMessageListener extends ListenerAdapter {
                     }
                     embedBuilder.addField(String.format("Plus %d more recommendations", size - 24), "Create a new timings report after resolving some of the above issues to see more.", false);
                 }
-                embedBuilder.setFooter(String.format("https://yatopiamc.org/ • Timing: %dms network, %dms processing", startProcessingTime - startTime, System.currentTimeMillis() - startProcessingTime),
+                embedBuilder.setFooter(String.format("https://sugarcanemc.org/ • Timing: %dms network, %dms processing", startProcessingTime - startTime, System.currentTimeMillis() - startProcessingTime),
                         event.getJDA().getSelfUser().getEffectiveAvatarUrl());
                 inProgress.handle((msg, t) -> {
                     if(msg != null) {
@@ -288,8 +288,8 @@ public class TimingsMessageListener extends ListenerAdapter {
 
     private void checkJvmVersion(EmbedBuilder embedBuilder, JsonObject system) {
         final String jvmVersion = system.get("jvmversion").getAsString();
-        if (jvmVersion.startsWith("1.8.") || jvmVersion.startsWith("9.") || jvmVersion.startsWith("10."))
-            embedBuilder.addField("Java version", String.format("You are using Java %s. Update to [Java 11](https://adoptopenjdk.net/installation.html).", jvmVersion), true);
+        if (jvmVersion.startsWith("1.8.") || jvmVersion.startsWith("9.") || jvmVersion.startsWith("10.") || jvmVersion.startsWith("11.") || jvmVersion.startsWith("12.") || jvmVersion.startsWith("13.") || jvmVersion.startsWith("14.") || jvmVersion.startsWith("15."))
+            embedBuilder.addField("Java version", String.format("You are using Java %s. Update to [Java 16](https://paper.readthedocs.io/en/latest/java-update/index.html).", jvmVersion), true);
     }
 
     private void checkTimingCost(EmbedBuilder embedBuilder, JsonObject system) {
